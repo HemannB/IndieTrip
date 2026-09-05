@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">IndieTrip</string>
+
+    <string name="country">Country</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+
+    <string name="select_country">Select a country</string>
+    <string name="select_state">Select a state</string>
+    <string name="select_city">Select a city</string>
+
+    <string name="departure_date">Departure Date</string>
+    <string name="return_date">Return Date</string>
+    <string name="select_date">Select date</string>
+
+    <string name="trip_preferences">Trip Preferences</string>
+    <string name="trip_preferences_subtitle">
+        Tell us what kind of experiences you\'re looking for
+    </string>
+
+    <string name="preference_beach">Beach</string>
+    <string name="preference_adventure">Adventure</string>
+    <string name="preference_camping">Camping</string>
+    <string name="preference_food">Food</string>
+    <string name="preference_nature">Nature</string>
+    <string name="preference_road_trip">Road Trip</string>
+    <string name="preference_culture">Culture</string>
+    <string name="preference_relaxation">Relaxation</string>
+    <string name="preference_mountain">Mountain</string>
+    <string name="preference_photography">Photography</string>
+
+    <string name="next_step">Next Step</string>
 </resources>
