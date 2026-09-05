@@ -8,4 +8,6 @@
     <color name="beige">#D6C9AD</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="text_primary">#112313</color>
+    <color name="text_secondary">#5F625A</color>
 </resources>
