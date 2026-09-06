@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 
 class MainActivity : Activity() {
     private lateinit var inputCountry : AutoCompleteTextView
+    private lateinit var inputState : AutoCompleteTextView
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -17,6 +18,7 @@ class MainActivity : Activity() {
 
     private fun getReferencesFromInput(){
         inputCountry = findViewById(R.id.input_country)
+        inputState = findViewById(R.id.input_state)
     }
 
     private fun setupCountryAutocomplete(){
@@ -37,6 +39,13 @@ class MainActivity : Activity() {
         )
 
         inputCountry.setAdapter(adapter)
+        inputCountry.setOnClickListener {
+            inputState.isEnabled = true
+        }
+
+        inputState.setAdapter(adapter)
+
+
 
     }
 }
