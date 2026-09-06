@@ -145,5 +145,109 @@
 
         </LinearLayout>
 
+        <!-- Trip Preferences -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/trip_preferences"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/trip_preferences_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <!-- Left column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/check_beach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_beach" />
+
+                <CheckBox
+                    android:id="@+id/check_adventure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_adventure" />
+
+                <CheckBox
+                    android:id="@+id/check_camping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_camping" />
+
+                <CheckBox
+                    android:id="@+id/check_food"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_food" />
+
+                <CheckBox
+                    android:id="@+id/check_mountain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_mountain" />
+
+            </LinearLayout>
+
+            <!-- Right column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/check_nature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_nature" />
+
+                <CheckBox
+                    android:id="@+id/check_road_trip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_road_trip" />
+
+                <CheckBox
+                    android:id="@+id/check_culture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_culture" />
+
+                <CheckBox
+                    android:id="@+id/check_relaxation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_relaxation" />
+
+                <CheckBox
+                    android:id="@+id/check_photography"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preference_photography" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>
