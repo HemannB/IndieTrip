@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        
+        <!--Banner Header-->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,6 +19,7 @@
             android:scaleType="fitCenter">
         </ImageView>
 
+        <!--Country-->
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -36,6 +37,27 @@
             android:inputType="text"
             android:completionThreshold="1"
             android:singleLine="true">
+        </AutoCompleteTextView>
+
+        <!--State-->
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/state"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp">
+        </TextView>
+        <AutoCompleteTextView
+            android:id="@+id/input_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/select_state"
+            android:inputType="text"
+            android:completionThreshold="1"
+            android:singleLine="true"
+            android:enabled="false">
         </AutoCompleteTextView>
 
     </LinearLayout>
