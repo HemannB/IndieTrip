@@ -13,12 +13,30 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="Header logo image"
+            android:contentDescription="@string/header_content_description"
             android:src="@drawable/indietrip_header"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter">
         </ImageView>
 
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/country"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp">
+        </TextView>
+        <AutoCompleteTextView
+            android:id="@+id/input_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/select_country"
+            android:inputType="text"
+            android:completionThreshold="1"
+            android:singleLine="true">
+        </AutoCompleteTextView>
 
     </LinearLayout>
 </ScrollView>
