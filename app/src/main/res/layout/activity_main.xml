@@ -248,6 +248,16 @@
             </LinearLayout>
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/next_step"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </ScrollView>
