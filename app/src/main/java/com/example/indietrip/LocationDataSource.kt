@@ -8,25 +8,38 @@ class LocationDataSource(
 ) {
 
     fun loadCountries(): List<Country> {
+        val items = loadJsonArray("countries.json")
+
+        return List(items.length()) { index ->
+            val item = items.getJSONObject(index)
+
+            Country(
+                id = item.getInt("id"),
+                name = item.getString("name")
+            )
+        }
+    }
+
+    fun loadStates(): List<State> {
+        val items = loadJsonArray("states.json")
+
+        return List(items.length()) { index ->
+            val item = items.getJSONObject(index)
+
+            State(
+                id = item.getInt("id"),
+                name = item.getString("name"),
+                countryId = item.getInt("country_id")
+            )
+        }
+    }
+
+    private fun loadJsonArray(fileName: String): JSONArray {
         val json = context.assets
-            .open("countries.json")
+            .open(fileName)
             .bufferedReader()
             .use { it.readText() }
 
-        val jsonArray = JSONArray(json)
-        val countries = mutableListOf<Country>()
-
-        for (i in 0 until jsonArray.length()) {
-            val item = jsonArray.getJSONObject(i)
-
-            countries.add(
-                Country(
-                    id = item.getInt("id"),
-                    name = item.getString("name")
-                )
-            )
-        }
-
-        return countries
+        return JSONArray(json)
     }
 }
