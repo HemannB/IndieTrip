@@ -13,7 +13,9 @@ class LocationSelector(
 ) {
     private val countries = dataSource.loadCountries()
     private val states = dataSource.loadStates()
+    private val cities = dataSource.loadCities()
     private var filteredStates = emptyList<State>()
+    private var filteredCities = emptyList<City>()
 
     fun setup() {
         setupCountryAutocomplete()
@@ -32,10 +34,12 @@ class LocationSelector(
             filteredStates = states.filter {
                 it.countryId == selectedCountry.id
             }
+            filteredCities = emptyList()
 
             inputState.setText("", false)
             inputCity.setText("", false)
             inputState.setAdapter(createAdapter(filteredStates.map { it.name }))
+            inputCity.setAdapter(createAdapter(emptyList()))
             inputState.isEnabled = filteredStates.isNotEmpty()
             inputCity.isEnabled = false
         }
@@ -44,20 +48,21 @@ class LocationSelector(
     private fun setupStateAutocomplete() {
         inputState.setAdapter(createAdapter(emptyList()))
 
-        inputState.setOnItemClickListener { _, _, _, _ ->
-            inputCity.isEnabled = true
+        inputState.setOnItemClickListener { _, _, position, _ ->
+            val selectedState = filteredStates[position]
+
+            filteredCities = cities.filter {
+                it.stateId == selectedState.id
+            }
+
+            inputCity.setText("", false)
+            inputCity.setAdapter(createAdapter(filteredCities.map { it.name }))
+            inputCity.isEnabled = filteredCities.isNotEmpty()
         }
     }
 
     private fun setupCityAutocomplete() {
-        val cities = listOf(
-            "Santiago",
-            "Santa Maria",
-            "Porto Alegre",
-            "Caxias do Sul"
-        )
-
-        inputCity.setAdapter(createAdapter(cities))
+        inputCity.setAdapter(createAdapter(emptyList()))
     }
 
     private fun createAdapter(items: List<String>): ArrayAdapter<String> {
