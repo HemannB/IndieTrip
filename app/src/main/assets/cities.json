@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1001,
+    "name": "Santiago",
+    "state_id": 101
+  },
+  {
+    "id": 1002,
+    "name": "Santa Maria",
+    "state_id": 101
+  },
+  {
+    "id": 1003,
+    "name": "Porto Alegre",
+    "state_id": 101
+  },
+  {
+    "id": 1004,
+    "name": "Caxias do Sul",
+    "state_id": 101
+  },
+  {
+    "id": 1101,
+    "name": "Florianópolis",
+    "state_id": 102
+  },
+  {
+    "id": 1102,
+    "name": "Joinville",
+    "state_id": 102
+  },
+  {
+    "id": 1201,
+    "name": "Curitiba",
+    "state_id": 103
+  },
+  {
+    "id": 1202,
+    "name": "Foz do Iguaçu",
+    "state_id": 103
+  },
+  {
+    "id": 1301,
+    "name": "São Paulo",
+    "state_id": 104
+  },
+  {
+    "id": 1302,
+    "name": "Campinas",
+    "state_id": 104
+  },
+  {
+    "id": 2001,
+    "name": "Toronto",
+    "state_id": 201
+  },
+  {
+    "id": 2002,
+    "name": "Ottawa",
+    "state_id": 201
+  },
+  {
+    "id": 2101,
+    "name": "Montréal",
+    "state_id": 202
+  },
+  {
+    "id": 2102,
+    "name": "Québec City",
+    "state_id": 202
+  },
+  {
+    "id": 2201,
+    "name": "Vancouver",
+    "state_id": 203
+  },
+  {
+    "id": 2202,
+    "name": "Victoria",
+    "state_id": 203
+  },
+  {
+    "id": 3001,
+    "name": "Guangzhou",
+    "state_id": 301
+  },
+  {
+    "id": 3002,
+    "name": "Shenzhen",
+    "state_id": 301
+  },
+  {
+    "id": 3101,
+    "name": "Chengdu",
+    "state_id": 302
+  },
+  {
+    "id": 3102,
+    "name": "Leshan",
+    "state_id": 302
+  },
+  {
+    "id": 3201,
+    "name": "Hangzhou",
+    "state_id": 303
+  },
+  {
+    "id": 3202,
+    "name": "Ningbo",
+    "state_id": 303
+  },
+  {
+    "id": 4001,
+    "name": "Tokyo",
+    "state_id": 401
+  },
+  {
+    "id": 4002,
+    "name": "Hachioji",
+    "state_id": 401
+  },
+  {
+    "id": 4101,
+    "name": "Osaka",
+    "state_id": 402
+  },
+  {
+    "id": 4102,
+    "name": "Sakai",
+    "state_id": 402
+  },
+  {
+    "id": 4201,
+    "name": "Kyoto",
+    "state_id": 403
+  },
+  {
+    "id": 4202,
+    "name": "Uji",
+    "state_id": 403
+  },
+  {
+    "id": 5001,
+    "name": "Kingston",
+    "state_id": 501
+  },
+  {
+    "id": 5101,
+    "name": "Half Way Tree",
+    "state_id": 502
+  },
+  {
+    "id": 5201,
+    "name": "Montego Bay",
+    "state_id": 503
+  },
+  {
+    "id": 6001,
+    "name": "Guadalajara",
+    "state_id": 601
+  },
+  {
+    "id": 6002,
+    "name": "Puerto Vallarta",
+    "state_id": 601
+  },
+  {
+    "id": 6101,
+    "name": "Mérida",
+    "state_id": 602
+  },
+  {
+    "id": 6102,
+    "name": "Valladolid",
+    "state_id": 602
+  },
+  {
+    "id": 6201,
+    "name": "Mexico City",
+    "state_id": 603
+  },
+  {
+    "id": 7001,
+    "name": "Lisbon",
+    "state_id": 701
+  },
+  {
+    "id": 7002,
+    "name": "Sintra",
+    "state_id": 701
+  },
+  {
+    "id": 7101,
+    "name": "Porto",
+    "state_id": 702
+  },
+  {
+    "id": 7102,
+    "name": "Vila Nova de Gaia",
+    "state_id": 702
+  },
+  {
+    "id": 7201,
+    "name": "Faro",
+    "state_id": 703
+  },
+  {
+    "id": 7202,
+    "name": "Lagos",
+    "state_id": 703
+  }
+]
