@@ -3,7 +3,10 @@ package com.example.indietrip
 import android.app.Activity
 import android.os.Bundle
 import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : Activity() {
     private lateinit var locationSelector: LocationSelector
@@ -15,6 +18,7 @@ class MainActivity : Activity() {
 
         setupLocationSelector()
         setupDateSelector()
+        setupNextButton()
     }
 
     private fun setupLocationSelector() {
@@ -54,5 +58,36 @@ class MainActivity : Activity() {
         )
 
         dateSelector.setup()
+    }
+
+    private fun setupNextButton() {
+        val preferenceInputs = listOf(
+            findViewById<CheckBox>(R.id.check_beach),
+            findViewById<CheckBox>(R.id.check_adventure),
+            findViewById<CheckBox>(R.id.check_camping),
+            findViewById<CheckBox>(R.id.check_food),
+            findViewById<CheckBox>(R.id.check_nature),
+            findViewById<CheckBox>(R.id.check_road_trip),
+            findViewById<CheckBox>(R.id.check_culture),
+            findViewById<CheckBox>(R.id.check_relaxation),
+            findViewById<CheckBox>(R.id.check_mountain),
+            findViewById<CheckBox>(R.id.check_photography)
+        )
+
+        findViewById<Button>(R.id.btn_next).setOnClickListener {
+            val locationIsValid = locationSelector.validate()
+            val datesAreValid = dateSelector.validate()
+
+            if (locationIsValid && datesAreValid) {
+                val selectedPreferences = preferenceInputs.count { it.isChecked }
+                val message = resources.getQuantityString(
+                    R.plurals.trip_form_ready,
+                    selectedPreferences,
+                    selectedPreferences
+                )
+
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

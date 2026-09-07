@@ -9,10 +9,15 @@
     <string name="select_country">Select a country</string>
     <string name="select_state">Select a state</string>
     <string name="select_city">Select a city</string>
+    <string name="error_country_required">Select a valid country</string>
+    <string name="error_state_required">Select a valid state</string>
+    <string name="error_city_required">Select a valid city</string>
 
     <string name="departure_date">Departure Date</string>
     <string name="return_date">Return Date</string>
     <string name="select_date">Select date</string>
+    <string name="error_departure_date_required">Select a departure date</string>
+    <string name="error_return_date_required">Select a return date</string>
 
     <string name="trip_preferences">Trip Preferences</string>
     <string name="trip_preferences_subtitle">
@@ -31,4 +36,9 @@
     <string name="preference_photography">Photography</string>
 
     <string name="next_step">Next Step</string>
+
+    <plurals name="trip_form_ready">
+        <item quantity="one">Trip ready with %d preference</item>
+        <item quantity="other">Trip ready with %d preferences</item>
+    </plurals>
 </resources>

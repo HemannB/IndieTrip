@@ -24,14 +24,35 @@ class DateSelector(
         }
     }
 
+    fun validate(): Boolean {
+        val departureIsValid = departureDate != null
+        val returnIsValid = returnDate != null
+
+        inputDepartureDate.error = if (departureIsValid) {
+            null
+        } else {
+            context.getString(R.string.error_departure_date_required)
+        }
+
+        inputReturnDate.error = if (returnIsValid) {
+            null
+        } else {
+            context.getString(R.string.error_return_date_required)
+        }
+
+        return departureIsValid && returnIsValid
+    }
+
     private fun showDepartureDatePicker() {
         val initialDate = departureDate ?: today()
 
         DatePickerDialog(
             context,
             { _, year, month, day ->
-                departureDate = createDate(year, month, day)
-                inputDepartureDate.setText(formatDate(departureDate!!))
+                val selectedDate = createDate(year, month, day)
+                departureDate = selectedDate
+                inputDepartureDate.setText(formatDate(selectedDate))
+                inputDepartureDate.error = null
 
                 if (returnDate?.before(departureDate) == true) {
                     returnDate = null
@@ -53,8 +74,10 @@ class DateSelector(
         DatePickerDialog(
             context,
             { _, year, month, day ->
-                returnDate = createDate(year, month, day)
-                inputReturnDate.setText(formatDate(returnDate!!))
+                val selectedDate = createDate(year, month, day)
+                returnDate = selectedDate
+                inputReturnDate.setText(formatDate(selectedDate))
+                inputReturnDate.error = null
             },
             initialDate.get(Calendar.YEAR),
             initialDate.get(Calendar.MONTH),
