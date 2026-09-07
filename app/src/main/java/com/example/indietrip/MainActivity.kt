@@ -24,11 +24,14 @@ class MainActivity : Activity() {
         val inputCity =
             findViewById<AutoCompleteTextView>(R.id.input_city)
 
+        val dataSource = LocationDataSource(this)
+
         locationSelector = LocationSelector(
             this,
             inputCountry,
             inputState,
-            inputCity
+            inputCity,
+            dataSource
         )
 
         locationSelector.setup()

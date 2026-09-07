@@ -8,7 +8,8 @@ class LocationSelector(
     private val context: Context,
     private val inputCountry: AutoCompleteTextView,
     private val inputState: AutoCompleteTextView,
-    private val inputCity: AutoCompleteTextView
+    private val inputCity: AutoCompleteTextView,
+    private val dataSource: LocationDataSource
 ) {
 
     fun setup() {
@@ -18,20 +19,14 @@ class LocationSelector(
     }
 
     private fun setupCountryAutocomplete() {
-        val countries = listOf(
-            "Brazil",
-            "Canada",
-            "China",
-            "Japan",
-            "Jamaica",
-            "Mexico",
-            "Portugal"
-        )
+        val countries = dataSource.loadCountries()
+
+        val countryNames = countries.map { it.name }
 
         val adapter = ArrayAdapter(
             context,
             android.R.layout.simple_dropdown_item_1line,
-            countries
+            countryNames
         )
 
         inputCountry.setAdapter(adapter)
