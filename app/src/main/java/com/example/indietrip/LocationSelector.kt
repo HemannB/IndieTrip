@@ -11,6 +11,9 @@ class LocationSelector(
     private val inputCity: AutoCompleteTextView,
     private val dataSource: LocationDataSource
 ) {
+    private val countries = dataSource.loadCountries()
+    private val states = dataSource.loadStates()
+    private var filteredStates = emptyList<State>()
 
     fun setup() {
         setupCountryAutocomplete()
@@ -19,38 +22,27 @@ class LocationSelector(
     }
 
     private fun setupCountryAutocomplete() {
-        val countries = dataSource.loadCountries()
-
         val countryNames = countries.map { it.name }
 
-        val adapter = ArrayAdapter(
-            context,
-            android.R.layout.simple_dropdown_item_1line,
-            countryNames
-        )
+        inputCountry.setAdapter(createAdapter(countryNames))
 
-        inputCountry.setAdapter(adapter)
+        inputCountry.setOnItemClickListener { _, _, position, _ ->
+            val selectedCountry = countries[position]
 
-        inputCountry.setOnItemClickListener { _, _, _, _ ->
-            inputState.isEnabled = true
+            filteredStates = states.filter {
+                it.countryId == selectedCountry.id
+            }
+
+            inputState.setText("", false)
+            inputCity.setText("", false)
+            inputState.setAdapter(createAdapter(filteredStates.map { it.name }))
+            inputState.isEnabled = filteredStates.isNotEmpty()
+            inputCity.isEnabled = false
         }
     }
 
     private fun setupStateAutocomplete() {
-        val states = listOf(
-            "Rio Grande do Sul",
-            "Santa Catarina",
-            "Paraná",
-            "São Paulo"
-        )
-
-        val adapter = ArrayAdapter(
-            context,
-            android.R.layout.simple_dropdown_item_1line,
-            states
-        )
-
-        inputState.setAdapter(adapter)
+        inputState.setAdapter(createAdapter(emptyList()))
 
         inputState.setOnItemClickListener { _, _, _, _ ->
             inputCity.isEnabled = true
@@ -65,12 +57,14 @@ class LocationSelector(
             "Caxias do Sul"
         )
 
-        val adapter = ArrayAdapter(
+        inputCity.setAdapter(createAdapter(cities))
+    }
+
+    private fun createAdapter(items: List<String>): ArrayAdapter<String> {
+        return ArrayAdapter(
             context,
             android.R.layout.simple_dropdown_item_1line,
-            cities
+            items
         )
-
-        inputCity.setAdapter(adapter)
     }
 }
