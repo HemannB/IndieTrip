@@ -28,6 +28,10 @@ class LocationSelector(
 
         inputCountry.setAdapter(createAdapter(countryNames))
 
+        inputCountry.setOnClickListener {
+            inputCountry.showDropDown()
+        }
+
         inputCountry.setOnItemClickListener { _, _, position, _ ->
             val selectedCountry = countries[position]
 
@@ -48,6 +52,10 @@ class LocationSelector(
     private fun setupStateAutocomplete() {
         inputState.setAdapter(createAdapter(emptyList()))
 
+        inputState.setOnClickListener {
+            inputState.showDropDown()
+        }
+
         inputState.setOnItemClickListener { _, _, position, _ ->
             val selectedState = filteredStates[position]
 
@@ -63,6 +71,10 @@ class LocationSelector(
 
     private fun setupCityAutocomplete() {
         inputCity.setAdapter(createAdapter(emptyList()))
+
+        inputCity.setOnClickListener {
+            inputCity.showDropDown()
+        }
     }
 
     private fun createAdapter(items: List<String>): ArrayAdapter<String> {
