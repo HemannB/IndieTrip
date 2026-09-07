@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.IndieTrip" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.IndieTrip" parent="@android:style/Theme.Material.Light.NoActionBar">
         <!--Brand-->
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
