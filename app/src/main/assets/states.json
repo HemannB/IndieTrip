@@ -1,0 +1,112 @@
+[
+  {
+    "id": 101,
+    "name": "Rio Grande do Sul",
+    "country_id": 1
+  },
+  {
+    "id": 102,
+    "name": "Santa Catarina",
+    "country_id": 1
+  },
+  {
+    "id": 103,
+    "name": "Paraná",
+    "country_id": 1
+  },
+  {
+    "id": 104,
+    "name": "São Paulo",
+    "country_id": 1
+  },
+  {
+    "id": 201,
+    "name": "Ontario",
+    "country_id": 2
+  },
+  {
+    "id": 202,
+    "name": "Quebec",
+    "country_id": 2
+  },
+  {
+    "id": 203,
+    "name": "British Columbia",
+    "country_id": 2
+  },
+  {
+    "id": 301,
+    "name": "Guangdong",
+    "country_id": 3
+  },
+  {
+    "id": 302,
+    "name": "Sichuan",
+    "country_id": 3
+  },
+  {
+    "id": 303,
+    "name": "Zhejiang",
+    "country_id": 3
+  },
+  {
+    "id": 401,
+    "name": "Tokyo",
+    "country_id": 4
+  },
+  {
+    "id": 402,
+    "name": "Osaka",
+    "country_id": 4
+  },
+  {
+    "id": 403,
+    "name": "Kyoto",
+    "country_id": 4
+  },
+  {
+    "id": 501,
+    "name": "Kingston",
+    "country_id": 5
+  },
+  {
+    "id": 502,
+    "name": "Saint Andrew",
+    "country_id": 5
+  },
+  {
+    "id": 503,
+    "name": "Saint James",
+    "country_id": 5
+  },
+  {
+    "id": 601,
+    "name": "Jalisco",
+    "country_id": 6
+  },
+  {
+    "id": 602,
+    "name": "Yucatán",
+    "country_id": 6
+  },
+  {
+    "id": 603,
+    "name": "Mexico City",
+    "country_id": 6
+  },
+  {
+    "id": 701,
+    "name": "Lisbon",
+    "country_id": 7
+  },
+  {
+    "id": 702,
+    "name": "Porto",
+    "country_id": 7
+  },
+  {
+    "id": 703,
+    "name": "Faro",
+    "country_id": 7
+  }
+]
