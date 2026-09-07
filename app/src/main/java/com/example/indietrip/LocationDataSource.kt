@@ -34,6 +34,20 @@ class LocationDataSource(
         }
     }
 
+    fun loadCities(): List<City> {
+        val items = loadJsonArray("cities.json")
+
+        return List(items.length()) { index ->
+            val item = items.getJSONObject(index)
+
+            City(
+                id = item.getInt("id"),
+                name = item.getString("name"),
+                stateId = item.getInt("state_id")
+            )
+        }
+    }
+
     private fun loadJsonArray(fileName: String): JSONArray {
         val json = context.assets
             .open(fileName)
