@@ -13,6 +13,10 @@
         android:theme="@style/Theme.IndieTrip">
 
         <activity
+            android:name=".TripSummaryActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ActivityDetailsActivity"
             android:exported="false" />
 

@@ -2,6 +2,7 @@ package com.example.indietrip
 
 import android.app.Activity
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -13,7 +14,6 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.TextView
-import android.widget.Toast
 import java.util.Locale
 
 class ActivityDetailsActivity : Activity() {
@@ -28,6 +28,8 @@ class ActivityDetailsActivity : Activity() {
     private var city = ""
     private var departureDate = ""
     private var returnDate = ""
+    private var departureDateMillis = 0L
+    private var returnDateMillis = 0L
     private var tripPreferences = emptyList<String>()
     private var selectedActivities = emptyList<String>()
     private var activityName = ""
@@ -58,6 +60,14 @@ class ActivityDetailsActivity : Activity() {
         city = intent.getStringExtra(TripExtras.CITY).orEmpty()
         departureDate = intent.getStringExtra(TripExtras.DEPARTURE_DATE).orEmpty()
         returnDate = intent.getStringExtra(TripExtras.RETURN_DATE).orEmpty()
+        departureDateMillis = intent.getLongExtra(
+            TripExtras.DEPARTURE_DATE_MILLIS,
+            0L
+        )
+        returnDateMillis = intent.getLongExtra(
+            TripExtras.RETURN_DATE_MILLIS,
+            0L
+        )
         tripPreferences = intent.getStringArrayListExtra(TripExtras.PREFERENCES)
             ?: emptyList()
         selectedActivities = intent.getStringArrayListExtra(
@@ -209,7 +219,7 @@ class ActivityDetailsActivity : Activity() {
             difficultyInput.checkedRadioButtonId
         ).text.toString()
         val startTime = startTimeInput.text.toString()
-        val people = peopleText.text.toString()
+        val people = peopleText.text.toString().toInt()
 
         Log.i(
             LOG_TAG,
@@ -223,8 +233,31 @@ class ActivityDetailsActivity : Activity() {
                 "people=$people, equipment=${equipmentInput.isChecked}"
         )
 
-        Toast.makeText(this, R.string.activity_added_to_trip, Toast.LENGTH_SHORT)
-            .show()
+        val intent = Intent(this, TripSummaryActivity::class.java).apply {
+            putExtra(TripExtras.COUNTRY, country)
+            putExtra(TripExtras.STATE, state)
+            putExtra(TripExtras.CITY, city)
+            putExtra(TripExtras.DEPARTURE_DATE, departureDate)
+            putExtra(TripExtras.RETURN_DATE, returnDate)
+            putExtra(TripExtras.DEPARTURE_DATE_MILLIS, departureDateMillis)
+            putExtra(TripExtras.RETURN_DATE_MILLIS, returnDateMillis)
+            putStringArrayListExtra(
+                TripExtras.PREFERENCES,
+                ArrayList(tripPreferences)
+            )
+            putStringArrayListExtra(
+                TripExtras.SELECTED_ACTIVITIES,
+                ArrayList(selectedActivities)
+            )
+            putExtra(TripExtras.ACTIVITY_NAME, activityName)
+            putExtra(TripExtras.ACTIVITY_DURATION, duration)
+            putExtra(TripExtras.ACTIVITY_DIFFICULTY, difficulty)
+            putExtra(TripExtras.ACTIVITY_START_TIME, startTime)
+            putExtra(TripExtras.ACTIVITY_PEOPLE, people)
+            putExtra(TripExtras.ACTIVITY_EQUIPMENT, equipmentInput.isChecked)
+        }
+
+        startActivity(intent)
     }
 
     private fun logReceivedData() {

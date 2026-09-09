@@ -18,6 +18,8 @@ class ActivitySelectionActivity : Activity() {
     private var city = ""
     private var departureDate = ""
     private var returnDate = ""
+    private var departureDateMillis = 0L
+    private var returnDateMillis = 0L
     private var preferences = emptyList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,14 @@ class ActivitySelectionActivity : Activity() {
         city = intent.getStringExtra(TripExtras.CITY).orEmpty()
         departureDate = intent.getStringExtra(TripExtras.DEPARTURE_DATE).orEmpty()
         returnDate = intent.getStringExtra(TripExtras.RETURN_DATE).orEmpty()
+        departureDateMillis = intent.getLongExtra(
+            TripExtras.DEPARTURE_DATE_MILLIS,
+            0L
+        )
+        returnDateMillis = intent.getLongExtra(
+            TripExtras.RETURN_DATE_MILLIS,
+            0L
+        )
         preferences = intent.getStringArrayListExtra(TripExtras.PREFERENCES)
             ?: emptyList()
     }
@@ -138,6 +148,8 @@ class ActivitySelectionActivity : Activity() {
             putExtra(TripExtras.CITY, city)
             putExtra(TripExtras.DEPARTURE_DATE, departureDate)
             putExtra(TripExtras.RETURN_DATE, returnDate)
+            putExtra(TripExtras.DEPARTURE_DATE_MILLIS, departureDateMillis)
+            putExtra(TripExtras.RETURN_DATE_MILLIS, returnDateMillis)
             putStringArrayListExtra(TripExtras.PREFERENCES, ArrayList(preferences))
             putStringArrayListExtra(
                 TripExtras.SELECTED_ACTIVITIES,

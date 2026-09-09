@@ -88,7 +88,19 @@
     <string name="edit_activity_later">You can always edit this later.</string>
     <string name="add_to_trip">Add to Trip  →</string>
     <string name="cancel"><u>Cancel</u></string>
-    <string name="activity_added_to_trip">Activity added to the trip</string>
+    <string name="your_trip">Your Trip</string>
+    <string name="everything_ready">Everything looks ready.</string>
+    <string name="your_activities">Your Activities</string>
+    <string name="review_selected_activities">Review everything selected for your trip.</string>
+    <string name="planned_activity_details">%1$s  •  %2$s  •  %3$s  •  %4$s</string>
+    <string name="equipment_included">Equipment reminder included</string>
+    <string name="activity_confirmed">Activity confirmed</string>
+    <string name="trip_summary">Trip summary</string>
+    <string name="total_planned_time">Total planned time: %1$s</string>
+    <string name="edit_before_finishing">You can still edit activities before finishing.</string>
+    <string name="finish_planning">Finish Planning  →</string>
+    <string name="edit_activities"><u>Edit activities</u></string>
+    <string name="trip_planning_finished">Trip planning finished</string>
 
     <plurals name="hours">
         <item quantity="one">%d hour</item>
@@ -98,5 +110,15 @@
     <plurals name="activities_selected">
         <item quantity="one">%d activity selected</item>
         <item quantity="other">%d activities selected</item>
+    </plurals>
+
+    <plurals name="days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <plurals name="people_count">
+        <item quantity="one">%d person</item>
+        <item quantity="other">%d people</item>
     </plurals>
 </resources>

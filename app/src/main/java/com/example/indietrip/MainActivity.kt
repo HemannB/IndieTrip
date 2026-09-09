@@ -91,6 +91,8 @@ class MainActivity : Activity() {
         val city = locationSelector.selectedCityName()
         val departureDate = dateSelector.departureDateText()
         val returnDate = dateSelector.returnDateText()
+        val departureDateMillis = dateSelector.departureDateMillis()
+        val returnDateMillis = dateSelector.returnDateMillis()
         val preferences = ArrayList(
             preferenceInputs
                 .filter { it.isChecked }
@@ -110,6 +112,8 @@ class MainActivity : Activity() {
             putExtra(TripExtras.CITY, city)
             putExtra(TripExtras.DEPARTURE_DATE, departureDate)
             putExtra(TripExtras.RETURN_DATE, returnDate)
+            putExtra(TripExtras.DEPARTURE_DATE_MILLIS, departureDateMillis)
+            putExtra(TripExtras.RETURN_DATE_MILLIS, returnDateMillis)
             putStringArrayListExtra(TripExtras.PREFERENCES, preferences)
         }
 

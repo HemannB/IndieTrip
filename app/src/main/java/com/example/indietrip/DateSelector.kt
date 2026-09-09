@@ -47,6 +47,10 @@ class DateSelector(
 
     fun returnDateText(): String = inputReturnDate.text.toString()
 
+    fun departureDateMillis(): Long = departureDate?.timeInMillis ?: 0L
+
+    fun returnDateMillis(): Long = returnDate?.timeInMillis ?: 0L
+
     private fun showDepartureDatePicker() {
         val initialDate = departureDate ?: today()
 

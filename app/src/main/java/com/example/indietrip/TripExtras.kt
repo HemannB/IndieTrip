@@ -6,6 +6,8 @@ object TripExtras {
     const val CITY = "trip_city"
     const val DEPARTURE_DATE = "trip_departure_date"
     const val RETURN_DATE = "trip_return_date"
+    const val DEPARTURE_DATE_MILLIS = "trip_departure_date_millis"
+    const val RETURN_DATE_MILLIS = "trip_return_date_millis"
     const val PREFERENCES = "trip_preferences"
     const val SELECTED_ACTIVITIES = "trip_selected_activities"
     const val ACTIVITY_NAME = "activity_name"
@@ -14,4 +16,7 @@ object TripExtras {
     const val ACTIVITY_DURATION = "activity_duration"
     const val ACTIVITY_DIFFICULTY = "activity_difficulty"
     const val ACTIVITY_IMAGE = "activity_image"
+    const val ACTIVITY_START_TIME = "activity_start_time"
+    const val ACTIVITY_PEOPLE = "activity_people"
+    const val ACTIVITY_EQUIPMENT = "activity_equipment"
 }
