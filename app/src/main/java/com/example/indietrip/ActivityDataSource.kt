@@ -16,7 +16,8 @@ class ActivityDataSource(
                     context.getString(R.string.preference_mountain),
                     context.getString(R.string.preference_photography)
                 ),
-                duration = context.getString(R.string.duration_three_hours),
+                description = context.getString(R.string.description_scenic_trail),
+                durationHours = 3,
                 difficulty = context.getString(R.string.difficulty_moderate),
                 imageResource = R.drawable.activity_trail
             ),
@@ -26,7 +27,8 @@ class ActivityDataSource(
                 preferences = listOf(
                     context.getString(R.string.preference_culture)
                 ),
-                duration = context.getString(R.string.duration_one_hour),
+                description = context.getString(R.string.description_local_museum),
+                durationHours = 1,
                 difficulty = context.getString(R.string.difficulty_easy),
                 imageResource = R.drawable.activity_museum
             ),
@@ -38,7 +40,8 @@ class ActivityDataSource(
                     context.getString(R.string.preference_relaxation),
                     context.getString(R.string.preference_food)
                 ),
-                duration = context.getString(R.string.duration_two_hours),
+                description = context.getString(R.string.description_riverside_picnic),
+                durationHours = 2,
                 difficulty = context.getString(R.string.difficulty_easy),
                 imageResource = R.drawable.activity_picnic
             ),
@@ -50,7 +53,8 @@ class ActivityDataSource(
                     context.getString(R.string.preference_adventure),
                     context.getString(R.string.preference_nature)
                 ),
-                duration = context.getString(R.string.duration_full_day),
+                description = context.getString(R.string.description_camping_experience),
+                durationHours = 6,
                 difficulty = context.getString(R.string.difficulty_moderate),
                 imageResource = R.drawable.activity_camping
             ),
@@ -62,7 +66,8 @@ class ActivityDataSource(
                     context.getString(R.string.preference_road_trip),
                     context.getString(R.string.preference_photography)
                 ),
-                duration = context.getString(R.string.duration_half_day),
+                description = context.getString(R.string.description_coastal_drive),
+                durationHours = 4,
                 difficulty = context.getString(R.string.difficulty_easy),
                 imageResource = R.drawable.activity_beach
             )

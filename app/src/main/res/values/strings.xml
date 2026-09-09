@@ -52,7 +52,6 @@
     <string name="continue_to_details">Continue  →</string>
     <string name="skip_for_now"><u>Skip for now</u></string>
     <string name="error_activity_required">Select at least one activity</string>
-    <string name="activities_saved">Activities saved for the next step</string>
     <string name="activities_skipped">No activities selected</string>
 
     <string name="activity_scenic_trail">Scenic Trail</string>
@@ -60,13 +59,41 @@
     <string name="activity_riverside_picnic">Riverside Picnic</string>
     <string name="activity_camping_experience">Camping Experience</string>
     <string name="activity_coastal_drive">Coastal Drive</string>
-    <string name="duration_one_hour">1h</string>
-    <string name="duration_two_hours">2h</string>
-    <string name="duration_three_hours">3h</string>
-    <string name="duration_half_day">Half day</string>
-    <string name="duration_full_day">Full day</string>
     <string name="difficulty_easy">Easy</string>
     <string name="difficulty_moderate">Moderate</string>
+    <string name="difficulty_hard">Hard</string>
+    <string name="description_scenic_trail">A scenic route with open views and a quiet outdoor atmosphere.</string>
+    <string name="description_local_museum">Discover local history, art, and traditions in a relaxed cultural visit.</string>
+    <string name="description_riverside_picnic">Enjoy local food and a peaceful break surrounded by nature.</string>
+    <string name="description_camping_experience">Spend time outdoors with a simple camping experience close to nature.</string>
+    <string name="description_coastal_drive">Explore scenic coastal roads and stop at viewpoints along the way.</string>
+
+    <string name="activity_details_title">Activity Details</string>
+    <string name="activity_details_subtitle">Customize your experience</string>
+    <string name="trip_settings">Trip Settings</string>
+    <string name="duration">Duration</string>
+    <string name="duration_minimum">1h</string>
+    <string name="duration_maximum">6h</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="start_time">Start time</string>
+    <string name="default_start_time">09:00</string>
+    <string name="people">People</string>
+    <string name="remove_person">Remove person</string>
+    <string name="add_person">Add person</string>
+    <string name="remove_person_symbol">−</string>
+    <string name="add_person_symbol">+</string>
+    <string name="equipment_reminder">Add equipment reminder</string>
+    <string name="equipment_reminder_subtitle">Get a checklist of recommended gear</string>
+    <string name="ready_to_add_activity">Ready to add this activity to your trip</string>
+    <string name="edit_activity_later">You can always edit this later.</string>
+    <string name="add_to_trip">Add to Trip  →</string>
+    <string name="cancel"><u>Cancel</u></string>
+    <string name="activity_added_to_trip">Activity added to the trip</string>
+
+    <plurals name="hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
 
     <plurals name="activities_selected">
         <item quantity="one">%d activity selected</item>

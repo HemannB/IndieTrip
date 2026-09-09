@@ -51,9 +51,14 @@ class ActivityOptionAdapter(
         holder.image.contentDescription = activity.name
         holder.name.text = activity.name
         holder.preferences.text = activity.preferences.joinToString(" • ")
+        val duration = view.resources.getQuantityString(
+            R.plurals.hours,
+            activity.durationHours,
+            activity.durationHours
+        )
         holder.details.text = view.context.getString(
             R.string.activity_details,
-            activity.duration,
+            duration,
             activity.difficulty
         )
 

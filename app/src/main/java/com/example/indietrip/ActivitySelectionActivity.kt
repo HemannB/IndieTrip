@@ -1,6 +1,7 @@
 package com.example.indietrip
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -114,9 +115,46 @@ class ActivitySelectionActivity : Activity() {
 
         Log.i(
             LOG_TAG,
-            "Selected activities: ${selectedActivities.joinToString { it.name }}"
+            "ActivitySelectionActivity -> ActivityDetailsActivity: " +
+                "country=$country, state=$state, city=$city, " +
+                "departure=$departureDate, return=$returnDate, " +
+                "preferences=${preferences.joinToString()}, " +
+                "activities=${selectedActivities.joinToString { it.name }}"
         )
-        Toast.makeText(this, R.string.activities_saved, Toast.LENGTH_SHORT).show()
+
+        openActivityDetails(
+            selectedActivities.first(),
+            selectedActivities.map { it.name }
+        )
+    }
+
+    private fun openActivityDetails(
+        activity: ActivityOption,
+        selectedActivityNames: List<String>
+    ) {
+        val intent = Intent(this, ActivityDetailsActivity::class.java).apply {
+            putExtra(TripExtras.COUNTRY, country)
+            putExtra(TripExtras.STATE, state)
+            putExtra(TripExtras.CITY, city)
+            putExtra(TripExtras.DEPARTURE_DATE, departureDate)
+            putExtra(TripExtras.RETURN_DATE, returnDate)
+            putStringArrayListExtra(TripExtras.PREFERENCES, ArrayList(preferences))
+            putStringArrayListExtra(
+                TripExtras.SELECTED_ACTIVITIES,
+                ArrayList(selectedActivityNames)
+            )
+            putExtra(TripExtras.ACTIVITY_NAME, activity.name)
+            putStringArrayListExtra(
+                TripExtras.ACTIVITY_PREFERENCES,
+                ArrayList(activity.preferences)
+            )
+            putExtra(TripExtras.ACTIVITY_DESCRIPTION, activity.description)
+            putExtra(TripExtras.ACTIVITY_DURATION, activity.durationHours)
+            putExtra(TripExtras.ACTIVITY_DIFFICULTY, activity.difficulty)
+            putExtra(TripExtras.ACTIVITY_IMAGE, activity.imageResource)
+        }
+
+        startActivity(intent)
     }
 
     private fun updateSelectionCount(count: Int) {
