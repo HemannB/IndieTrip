@@ -35,7 +35,7 @@
     <string name="preference_mountain">Mountain</string>
     <string name="preference_photography">Photography</string>
 
-    <string name="next_step">Next Step</string>
+    <string name="next_step">Next Step  →</string>
 
     <plurals name="trip_form_ready">
         <item quantity="one">Trip ready with %d preference</item>

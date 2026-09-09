@@ -6,8 +6,10 @@
     <color name="secondary">#778565</color>
     <color name="accent">#D29F6B</color>
     <color name="beige">#D6C9AD</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_primary">#112313</color>
     <color name="text_secondary">#5F625A</color>
+    <color name="input_background">#FFFDF9</color>
+    <color name="input_background_disabled">#F0EDE5</color>
+    <color name="input_border">#B9B5AC</color>
 </resources>

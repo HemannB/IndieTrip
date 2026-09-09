@@ -3,7 +3,7 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,13 +37,14 @@
                 android:layout_marginTop="20dp">
             </TextView>
             <AutoCompleteTextView
+                style="@style/Widget.IndieTrip.FormInput"
                 android:id="@+id/input_country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:hint="@string/select_country"
                 android:inputType="text"
-                android:completionThreshold="1"
-                android:singleLine="true">
+                android:completionThreshold="1">
             </AutoCompleteTextView>
 
             <!--State-->
@@ -57,13 +58,14 @@
                 android:layout_marginTop="12dp">
             </TextView>
             <AutoCompleteTextView
+                style="@style/Widget.IndieTrip.FormInput"
                 android:id="@+id/input_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:hint="@string/select_state"
                 android:inputType="text"
                 android:completionThreshold="1"
-                android:singleLine="true"
                 android:enabled="false">
             </AutoCompleteTextView>
 
@@ -78,13 +80,14 @@
                 android:layout_marginTop="12dp">
             </TextView>
             <AutoCompleteTextView
+                style="@style/Widget.IndieTrip.FormInput"
                 android:id="@+id/input_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:hint="@string/select_city"
                 android:inputType="text"
                 android:completionThreshold="1"
-                android:singleLine="true"
                 android:enabled="false">
             </AutoCompleteTextView>
 
@@ -93,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <!-- Departure Date -->
@@ -112,14 +116,17 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        style="@style/Widget.IndieTrip.FormInput"
                         android:id="@+id/input_departure_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:drawableStart="@drawable/ic_calendar"
                         android:hint="@string/select_date"
+                        android:importantForAutofill="no"
                         android:inputType="date"
                         android:focusable="false"
-                        android:clickable="true"
-                        android:singleLine="true" />
+                        android:clickable="true" />
 
                 </LinearLayout>
 
@@ -140,14 +147,17 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        style="@style/Widget.IndieTrip.FormInput"
                         android:id="@+id/input_return_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:drawableStart="@drawable/ic_calendar"
                         android:hint="@string/select_date"
+                        android:importantForAutofill="no"
                         android:inputType="date"
                         android:focusable="false"
-                        android:clickable="true"
-                        android:singleLine="true" />
+                        android:clickable="true" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -174,6 +184,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:background="@drawable/bg_preferences"
+                android:baselineAligned="false"
+                android:padding="12dp"
                 android:orientation="horizontal">
 
                 <!-- Left column -->
@@ -184,34 +197,39 @@
                     android:orientation="vertical">
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_beach"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_beach" />
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_adventure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_adventure" />
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_camping"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_camping" />
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_food"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_food" />
 
                     <CheckBox
-                        android:id="@+id/check_mountain"
+                        style="@style/Widget.IndieTrip.CheckBox"
+                        android:id="@+id/check_nature"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/preference_mountain" />
+                        android:text="@string/preference_nature" />
 
                 </LinearLayout>
 
@@ -223,30 +241,35 @@
                     android:orientation="vertical">
 
                     <CheckBox
-                        android:id="@+id/check_nature"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/preference_nature" />
-
-                    <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_road_trip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_road_trip" />
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_culture"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_culture" />
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_relaxation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/preference_relaxation" />
 
                     <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
+                        android:id="@+id/check_mountain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/preference_mountain" />
+
+                    <CheckBox
+                        style="@style/Widget.IndieTrip.CheckBox"
                         android:id="@+id/check_photography"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -256,15 +279,13 @@
             </LinearLayout>
 
             <Button
+                style="@style/Widget.IndieTrip.PrimaryButton"
                 android:id="@+id/btn_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:text="@string/next_step"
-                android:textAllCaps="false"
-                android:backgroundTint="@color/primary"
-                android:textColor="@color/white" />
+                android:text="@string/next_step" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
