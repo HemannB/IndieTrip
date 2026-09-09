@@ -1,12 +1,13 @@
 package com.example.indietrip
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.Toast
 
 class MainActivity : Activity() {
     private lateinit var locationSelector: LocationSelector
@@ -79,15 +80,43 @@ class MainActivity : Activity() {
             val datesAreValid = dateSelector.validate()
 
             if (locationIsValid && datesAreValid) {
-                val selectedPreferences = preferenceInputs.count { it.isChecked }
-                val message = resources.getQuantityString(
-                    R.plurals.trip_form_ready,
-                    selectedPreferences,
-                    selectedPreferences
-                )
-
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                openActivitySelection(preferenceInputs)
             }
         }
+    }
+
+    private fun openActivitySelection(preferenceInputs: List<CheckBox>) {
+        val country = locationSelector.selectedCountryName()
+        val state = locationSelector.selectedStateName()
+        val city = locationSelector.selectedCityName()
+        val departureDate = dateSelector.departureDateText()
+        val returnDate = dateSelector.returnDateText()
+        val preferences = ArrayList(
+            preferenceInputs
+                .filter { it.isChecked }
+                .map { it.text.toString() }
+        )
+
+        Log.i(
+            LOG_TAG,
+            "MainActivity -> ActivitySelectionActivity: country=$country, " +
+                "state=$state, city=$city, departure=$departureDate, " +
+                "return=$returnDate, preferences=${preferences.joinToString()}"
+        )
+
+        val intent = Intent(this, ActivitySelectionActivity::class.java).apply {
+            putExtra(TripExtras.COUNTRY, country)
+            putExtra(TripExtras.STATE, state)
+            putExtra(TripExtras.CITY, city)
+            putExtra(TripExtras.DEPARTURE_DATE, departureDate)
+            putExtra(TripExtras.RETURN_DATE, returnDate)
+            putStringArrayListExtra(TripExtras.PREFERENCES, preferences)
+        }
+
+        startActivity(intent)
+    }
+
+    companion object {
+        private const val LOG_TAG = "IndieTrip"
     }
 }

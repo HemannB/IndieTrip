@@ -43,6 +43,10 @@ class DateSelector(
         return departureIsValid && returnIsValid
     }
 
+    fun departureDateText(): String = inputDepartureDate.text.toString()
+
+    fun returnDateText(): String = inputReturnDate.text.toString()
+
     private fun showDepartureDatePicker() {
         val initialDate = departureDate ?: today()
 

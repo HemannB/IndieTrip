@@ -37,8 +37,39 @@
 
     <string name="next_step">Next Step  →</string>
 
-    <plurals name="trip_form_ready">
-        <item quantity="one">Trip ready with %d preference</item>
-        <item quantity="other">Trip ready with %d preferences</item>
+    <string name="go_back">Go back</string>
+    <string name="explore_city">Explore %1$s</string>
+    <string name="activity_selection_subtitle">Choose activities based on your preferences</string>
+    <string name="trip_location">%1$s, %2$s • %3$s</string>
+    <string name="trip_date_range">%1$s – %2$s</string>
+    <string name="all_preferences">All preferences</string>
+    <string name="choose_your_activities">Choose Your Activities</string>
+    <string name="choose_activities_subtitle">Pick the experiences you want to include in your trip</string>
+    <string name="activity_image">Activity illustration</string>
+    <string name="select_activity">Select activity</string>
+    <string name="activity_details">%1$s  •  %2$s</string>
+    <string name="clear_selection">Clear selection</string>
+    <string name="continue_to_details">Continue  →</string>
+    <string name="skip_for_now"><u>Skip for now</u></string>
+    <string name="error_activity_required">Select at least one activity</string>
+    <string name="activities_saved">Activities saved for the next step</string>
+    <string name="activities_skipped">No activities selected</string>
+
+    <string name="activity_scenic_trail">Scenic Trail</string>
+    <string name="activity_local_museum">Local Museum</string>
+    <string name="activity_riverside_picnic">Riverside Picnic</string>
+    <string name="activity_camping_experience">Camping Experience</string>
+    <string name="activity_coastal_drive">Coastal Drive</string>
+    <string name="duration_one_hour">1h</string>
+    <string name="duration_two_hours">2h</string>
+    <string name="duration_three_hours">3h</string>
+    <string name="duration_half_day">Half day</string>
+    <string name="duration_full_day">Full day</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_moderate">Moderate</string>
+
+    <plurals name="activities_selected">
+        <item quantity="one">%d activity selected</item>
+        <item quantity="other">%d activities selected</item>
     </plurals>
 </resources>

@@ -64,6 +64,12 @@ class LocationSelector(
         return countryIsValid && stateIsValid && cityIsValid
     }
 
+    fun selectedCountryName(): String = selectedCountry?.name.orEmpty()
+
+    fun selectedStateName(): String = selectedState?.name.orEmpty()
+
+    fun selectedCityName(): String = selectedCity?.name.orEmpty()
+
     private fun setupCountryAutocomplete() {
         val countryNames = countries.map { it.name }
 
